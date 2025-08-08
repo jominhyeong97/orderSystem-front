@@ -5,6 +5,8 @@
     <v-btn @click="spaRouting1()">SPA 경로기반 일반라우팅(함수)</v-btn>
     <v-btn :to="{ name:'RouteComponent2' }">SPA 이름 기반 일반라우팅</v-btn>
     <v-btn @click="spaRouting2()">SPA 이름 기반 일반라우팅(함수)</v-btn>
+    <v-btn :to="'/practice/route3/1'">게시글 1번 보기</v-btn>
+    <v-btn @click="goToPost(1)">게시글 1번 보기</v-btn>
 </template>
 
 <script>
@@ -27,6 +29,9 @@
             },
             spaRouting2() {
                 this.$router.push({name:"RouteComponent2"})
+            },
+            goToPost(postId) {
+                this.$router.push(`/practice/route3/${postId}`)
             },
 
         }

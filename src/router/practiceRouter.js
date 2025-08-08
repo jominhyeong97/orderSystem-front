@@ -47,7 +47,7 @@ export const practiceRouter = [
         component: RouteComponent2
     },
     {
-        path: "/practice/route3",
+        path: "/practice/route3/:postId",
         name: "RouteComponent3",
         component: RouteComponent3 
     }

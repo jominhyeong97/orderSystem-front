@@ -58,7 +58,7 @@
                 try {
                 const data = {name:this.name,email:this.email,password:this.password} 
                 console.log(data)
-                await axios.post("http://localhost:8080/member/create", data)
+                await axios.post(`${process.env.VUE_APP_API_BASE_URL}/member/create`, data)
                 this.$router.push("/")
                 }
                 

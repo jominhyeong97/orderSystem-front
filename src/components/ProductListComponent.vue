@@ -115,6 +115,14 @@ import axios from 'axios';
             window.addEventListener('scroll', this.scrollPaging)
         },
         methods: {
+            addCart() {
+                const orderProductList = this.productList
+                    .filter(p=>p.selected && p.productCount > 0)
+                    .map(p=>({productId:p.id,productCount:p.productCount,name:p.name}))
+
+                    orderProductList.forEach(p=>this.$store.dispatch("addCart",p))
+            },
+
             searchProduct() {
                 this.productList = [];
                 this.currentPage = 0;
@@ -174,6 +182,7 @@ import axios from 'axios';
                     alert('주문이 실패했습니다.')
                 }
             },
+            
         }
     }
 </script>
